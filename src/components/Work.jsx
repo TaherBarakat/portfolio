@@ -76,7 +76,6 @@ const Work = () => {
                                         <div>
                                              {item.topics.map(
                                                   (topic, i, arr) => {
-                                                       console.log(arr);
                                                        return (
                                                             <span
                                                                  key={i}
