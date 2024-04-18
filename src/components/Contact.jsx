@@ -5,7 +5,7 @@ const Contact = () => {
      return (
           <div
                name="contact"
-               className="w-full  bg-[#0a192f] h-[120vh] flex flex-col justify-center items-center p-4"
+               className="w-full  bg-[#0a192f] h-auto  pt-[10vh] flex flex-col justify-end items-center p-4"
           >
                <form
                     method="POST"
@@ -42,37 +42,38 @@ const Contact = () => {
                     <button className="text-white border-2 hover:bg-pink-600 hover:border-pink-600 px-4 py-3 my-8 mx-auto flex items-center">
                          Let's Collaborate
                     </button>
-               </form>
-               <div className=" lg:hidden w-[90vw] flex align-bottom ">
-                    <ul className="flex items-center justify-between w-full ">
+               </form>{" "}
+               <div className=" lg:hidden w-[80vw]  mx:10 my:5 flex flex-col justify-center align-bottom ">
+                    <p className="text-[#8892b0] m-8:"> For more info:</p>
+                    <ul className="flex items-center justify-between w-full my-5 ">
                          <li className="w-[20vw] h-[60px] flex justify-between items-center    ">
                               <a
-                                   className="flex justify-between  flex-col items-center w-full text-[#ccd6f6] "
+                                   className="flex justify-between  flex-col items-center w-full text-[#8892b0] "
                                    href="https://www.linkedin.com/in/Taher-Barakat"
                                    target="_blank"
                               >
-                                   <FaLinkedin size={30} /> Linkedin
+                                   <FaLinkedin size={25} /> Linkedin
                               </a>
                          </li>
                          <li className="w-[20vw] h-[60px] flex justify-between items-center    ">
                               <a
-                                   className="flex justify-between  flex-col items-center  w-full text-[#ccd6f6]"
+                                   className="flex justify-between  flex-col items-center  w-full text-[#8892b0]"
                                    href="https://github.com/TaherBarakat"
                                    target="_blank"
                               >
-                                   <FaGithub size={30} />
+                                   <FaGithub size={25} />
                                    Github
                               </a>
                          </li>
 
                          <li className="w-[20vw] h-[60px] flex justify-between items-center">
                               <a
-                                   className="flex justify-between flex-col items-center w-full text-[#ccd6f6] "
+                                   className="flex justify-between flex-col items-center w-full text-[#8892b0]"
                                    href="https://cdn2.cvdesignr.com/u/cv/pdf/62e8113a68805_38f3f6ea9b9ec4d0d6df92b4b6b973fd28fffce4_e1eeb.pdf"
                                    target="_blank"
                                    download
                               >
-                                   <BsFillPersonLinesFill size={30} />
+                                   <BsFillPersonLinesFill size={25} />
                                    Resume
                               </a>
                          </li>
