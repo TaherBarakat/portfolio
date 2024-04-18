@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { data } from "../data/data.js";
 
-function capitalizeFirstLettr(string) {
-     return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
 function capitalizeFirstLetter(arr) {
      let mArr = [];
      arr.forEach((element) => {
@@ -17,37 +13,33 @@ function capitalizeFirstLetter(arr) {
 const Work = () => {
      const [repos, setRepos] = useState([]);
      useEffect(() => {
-          // fetch("https://api.github.com/users/TaherBarakat/repos")
-          //      .then((res) => res.json())
-          //      .then((data) => {
-          //           setRepos(
-          //                data
-          //                     .filter(
-          //                          (repo) =>
-          //                               repo.topics.filter(
-          //                                    (topic) => topic === "gh-pages"
-          //                               ).length > 0
-          //                     )
-          //                     .map((repo) => {
-          //                          return {
-          //                               id: repo.id,
-          //                               name: capitalizeFirstLetter(
-          //                                    repo.name.split("-")
-          //                               ).join(" "),
-          //                               github: repo.svn_url,
-          //                               // topics: [...repo.topics],
-          //                               live: repo.homepage,
-          //                               image: "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg",
-          //                          };
-          //                     })
-          //           );
-          //      });
-          // repos.map((repo) => console.log(repo.svn_url)) ;
-          // homepage
-          // svn_url
+          fetch("https://api.github.com/users/TaherBarakat/repos")
+               .then((res) => res.json())
+               .then((data) => {
+                    let ghRepos = data
+                         .filter(
+                              (repo) =>
+                                   repo.topics.filter(
+                                        (topic) => topic === "gh-pages"
+                                   ).length > 0
+                         )
+                         .map((repo) => {
+                              return {
+                                   id: repo.id,
+                                   name: capitalizeFirstLetter(
+                                        repo.name.split("-")
+                                   ).join(" "),
+                                   github: repo.svn_url,
+                                   topics: [...repo.topics],
+                                   live: repo.homepage,
+                                   image: "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg",
+                              };
+                         });
+                    setRepos([...ghRepos]);
+               });
      }, []);
-     const project = data;
-     console.log(repos);
+     //  const project = data;
+     //  console.log(repos);
 
      return (
           <div
@@ -67,7 +59,7 @@ const Work = () => {
                     {/* container for projects */}
                     <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
                          {/* Gird Item */}
-                         {project.map((item, index) => (
+                         {repos.map((item, index) => (
                               <div
                                    key={index}
                                    style={{
@@ -77,19 +69,28 @@ const Work = () => {
               flex justify-center text-center items-center mx-auto content-div "
                               >
                                    {/* Hover effect for images */}
-                                   <div className="opacity-0 group-hover:opacity-100 ">
+                                   <div className="opacity-0 group-hover:opacity-100  duration-500  ">
                                         <span className="text-2xl font bold text-white tracking-wider ">
                                              {item.name}
                                         </span>
                                         <div>
-                                             {/* {item.topics.map((topic, i) => (
-                                                  <span key={i}>
-                                                       {topic}
-                                                       {i === this.length
-                                                            ? ""
-                                                            : `|`}
-                                                  </span>
-                                             ))} */}
+                                             {item.topics.map(
+                                                  (topic, i, arr) => {
+                                                       console.log(arr);
+                                                       return (
+                                                            <span
+                                                                 key={i}
+                                                                 className="text-[0.8rem]"
+                                                            >
+                                                                 {topic}
+                                                                 {i ===
+                                                                 arr.length - 1
+                                                                      ? ""
+                                                                      : ` | `}
+                                                            </span>
+                                                       );
+                                                  }
+                                             )}
                                         </div>
                                         <div className="pt-8 text-center ">
                                              {/* eslint-disable-next-line */}
@@ -105,17 +106,20 @@ const Work = () => {
                                                   </button>
                                              </a>
                                              {/* eslint-disable-next-line */}
-                                             <a
-                                                  href={item.live}
-                                                  target="_blank"
-                                             >
-                                                  <button
-                                                       className="text-center rounded-lg px-4 py-3 m-2
-                       bg-white text-gray-700 font-bold text-lg"
+
+                                             {item.live && (
+                                                  <a
+                                                       href={item.live}
+                                                       target="_blank"
                                                   >
-                                                       Live
-                                                  </button>
-                                             </a>
+                                                       <button
+                                                            className="text-center rounded-lg px-4 py-3 m-2
+                       bg-white text-gray-700 font-bold text-lg"
+                                                       >
+                                                            Live
+                                                       </button>
+                                                  </a>
+                                             )}
                                         </div>
                                    </div>
                               </div>
