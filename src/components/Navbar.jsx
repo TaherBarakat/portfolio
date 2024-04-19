@@ -10,14 +10,15 @@ const Navbar = () => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className="fixed z-10 flex h-[10vh] min-h-[40px] w-full items-center justify-between bg-[#0a192f] px-[5vw] text-gray-300 md:px-10">
+    <div className="fixed z-10 flex h-[9vh] min-h-[40px] w-full items-center justify-between bg-[#0a192f] px-[5vw] text-gray-300 md:px-10">
       <div>
         <img
           src={Logo}
           alt="Logo Image"
           style={{
-            width: "4vmax",
-            maxWidth: "3.5rem",
+            width: "3.5vmax",
+            maxWidth: "4.5rem",
+            minWidth: "3rem",
           }}
         />
       </div>
