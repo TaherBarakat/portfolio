@@ -130,7 +130,7 @@ const Work = () => {
         </div>
 
         {/* container for projects */}
-        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 ">
           {/* Gird Item */}
           {projects.map((item, index) => (
             <div
@@ -142,7 +142,7 @@ const Work = () => {
               items-center justify-center rounded-md text-center shadow-lg shadow-[#040c16] "
             >
               {/* Hover effect for images */}
-              <div className="opacity-0 duration-500  group-hover:opacity-100  ">
+              <div className="pointer-events-none opacity-0  duration-500 group-hover:pointer-events-auto group-hover:opacity-100 ">
                 <span className="font bold text-2xl tracking-wider text-white ">
                   {item.name}
                 </span>
