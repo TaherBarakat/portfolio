@@ -24,22 +24,22 @@ import {
 } from "react-icons/fa";
 const Skills = () => {
   let mySkills = [
-    <FaReact size={50} title="React" color={"#ccd6f6"} key={2} />,
-    <SiRedux size={50} title="Redux" color={"#ccd6f6"} key={10} />,
-    <FaGithub size={50} title="Github" color={"#ccd6f6"} key={7} />,
-    <FaAngular size={50} title="Angular" color={"#ccd6f6"} key={1} />,
+    <FaReact size={50} title="React" color={"#ccd6f6"} key={1} />,
+    <SiRedux size={50} title="Redux" color={"#ccd6f6"} key={2} />,
+    <FaGithub size={50} title="Github" color={"#ccd6f6"} key={3} />,
+    <FaAngular size={50} title="Angular" color={"#ccd6f6"} key={4} />,
     <FaJs size={50} title="Java Script" color={"#ccd6f6"} key={5} />,
-    <FaDatabase size={50} title="OracleDB" color={"#ccd6f6"} key={8} />,
-    <FaHtml5 size={50} title="HTML" color={"#ccd6f6"} key={3} />,
-    <FaCss3 size={50} title="CSS" color={"#ccd6f6"} key={4} />,
-    <FaBootstrap size={50} title="Bootstrap" color={"#ccd6f6"} key={6} />,
-    <SiTailwindcss size={50} title="Tailwind" color={"#ccd6f6"} key={9} />,
+    <FaDatabase size={50} title="OracleDB" color={"#ccd6f6"} key={6} />,
+    <FaHtml5 size={50} title="HTML" color={"#ccd6f6"} key={7} />,
+    <FaCss3 size={50} title="CSS" color={"#ccd6f6"} key={8} />,
+    <FaBootstrap size={50} title="Bootstrap" color={"#ccd6f6"} key={9} />,
+    <SiTailwindcss size={50} title="Tailwind" color={"#ccd6f6"} key={10} />,
   ];
   return (
     <>
       <div
         name="skills"
-        className="mb-10  h-auto min-h-[100vh] w-full bg-[#0a192f]   text-gray-300 "
+        className="mb-10 flex h-auto min-h-[100vh] w-full items-center bg-[#0a192f]   text-gray-300 "
       >
         {/* {mySkills} */}
         {/* Container */}

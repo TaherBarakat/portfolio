@@ -11,10 +11,35 @@
 
 let projects = [
   {
+    id: 771508690,
+    name: "React Flashcard App",
+    github: "https://github.com/TaherBarakat/react-flashcard-app",
+    topics: ["React", "JavaScript"],
+    live: "https://taherbarakat.github.io/react-flashcard-app/",
+    image:
+      "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg",
+  },
+  {
+    id: 771518694,
+    name: "React Google Clone",
+    github: "https://github.com/TaherBarakat/react-google-docs-clone",
+    topics: [
+      "React",
+      "JavaScript",
+      "MongoDB",
+      "Socket.io",
+      "JavaScript",
+      "NodeJs",
+    ],
+    live: "",
+    image:
+      "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg",
+  },
+  {
     id: 771508694,
-    name: "Food Order App",
+    name: "React Food Order App",
     github: "https://github.com/TaherBarakat/food-order-app",
-    topics: ["express-js", "javascript", "react-js"],
+    topics: ["React", "JavaScript", "ExpressJs"],
     live: "",
     image:
       "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg",
@@ -23,7 +48,7 @@ let projects = [
     id: 777730625,
     name: "Ng Food App",
     github: "https://github.com/TaherBarakat/ng-food-app",
-    topics: ["angular", "material-ui", "typescript"],
+    topics: ["Angular", "MaterialUi", "TypeScript"],
     live: "",
     image:
       "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg",
@@ -32,7 +57,7 @@ let projects = [
     id: 759979761,
     name: "Note App",
     github: "https://github.com/TaherBarakat/note-app",
-    topics: ["gh-pages", "nextjs", "typescript"],
+    topics: ["Nextjs", "TypeScript"],
     live: "",
     image:
       "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg",
@@ -41,7 +66,7 @@ let projects = [
     id: 783237412,
     name: "React Budget App",
     github: "https://github.com/TaherBarakat/react-budget-app",
-    topics: ["gh-pages", "javascript", "react"],
+    topics: ["React", "JavaScript", "Bootstrap"],
     live: "https://taherbarakat.github.io/react-budget-app/",
     image:
       "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg",
@@ -94,7 +119,7 @@ const Work = () => {
   return (
     <div
       name="work"
-      className=" mb-10  h-auto min-h-[100vh] w-full  bg-[#0a192f]  text-gray-300 "
+      className=" mb-10 flex h-auto min-h-[100vh] w-full items-center  bg-[#0a192f]  text-gray-300 "
     >
       <div className="mx-auto flex h-full w-full max-w-[1000px] flex-col justify-center p-4">
         <div className="pb-8">
