@@ -1,6 +1,8 @@
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import { FaExternalLinkAlt } from "react-icons/fa";
+
 const Contact = () => {
   return (
     <div
@@ -17,8 +19,25 @@ const Contact = () => {
             Contact
           </p>
           <p className="py-4 text-gray-300">
-            Submit the form below or shoot me an email at
-            Taher.Barakat12223@gmail.com
+            Shoot me an email at{" "}
+            <a
+              className="  font-semibold text-pink-600 duration-500 hover:text-[1.015rem] hover:text-pink-700"
+              href="mailto:Taher.Barakat12223@gmail.com"
+            >
+              Taher.Barakat12223@gmail.com{" "}
+              <FaExternalLinkAlt size={12} className="inline" />
+            </a>{" "}
+            or just call me at this number{" "}
+            <a
+              className="  font-semibold text-pink-600 duration-500 hover:text-[1.015rem] hover:text-pink-700"
+              href="tel:+963938907414"
+            >
+              {" "}
+              +963 938 907 414{" "}
+              <FaExternalLinkAlt size={12} className="inline" />
+            </a>{" "}
+            ,also you can submit the form below
+            <br />
           </p>
         </div>
         <input
