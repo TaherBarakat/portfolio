@@ -9,7 +9,7 @@ const Contact = () => {
     >
       <form
         method="POST"
-        action="https://getform.io/f/lbjkdjja"
+        action="https://getform.io/f/panvkqka"
         className="flex w-full max-w-[600px] flex-col"
       >
         <div className="pb-8">
@@ -21,6 +21,12 @@ const Contact = () => {
             Taher.Barakat12223@gmail.com
           </p>
         </div>
+        <input
+          type="hidden"
+          name="_gotcha"
+          style={{ display: "none !important" }}
+        />
+
         <input
           className="bg-[#ccd6f6] p-2"
           type="text"
