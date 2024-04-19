@@ -1,50 +1,96 @@
-import React, { useEffect, useState } from "react";
-import { data } from "../data/data.js";
+// import React, { useEffect, useState } from "react";
 
-function capitalizeFirstLetter(arr) {
-     let mArr = [];
-     arr.forEach((element) => {
-          mArr.push(element.charAt(0).toUpperCase() + element.slice(1));
-     });
+// function capitalizeFirstLetter(arr) {
+//      let mArr = [];
+//      arr.forEach((element) => {
+//           mArr.push(element.charAt(0).toUpperCase() + element.slice(1));
+//      });
 
-     return mArr;
-}
+//      return mArr;
+// }
+
+let projects = [
+     {
+          id: 771508694,
+          name: "Food Order App",
+          github: "https://github.com/TaherBarakat/food-order-app",
+          topics: ["express-js", "javascript", "react-js"],
+          live: "",
+          image: "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg",
+     },
+     {
+          id: 777730625,
+          name: "Ng Food App",
+          github: "https://github.com/TaherBarakat/ng-food-app",
+          topics: ["angular", "material-ui", "typescript"],
+          live: "",
+          image: "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg",
+     },
+     {
+          id: 759979761,
+          name: "Note App",
+          github: "https://github.com/TaherBarakat/note-app",
+          topics: ["gh-pages", "nextjs", "typescript"],
+          live: "",
+          image: "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg",
+     },
+     {
+          id: 783237412,
+          name: "React Budget App",
+          github: "https://github.com/TaherBarakat/react-budget-app",
+          topics: ["gh-pages", "javascript", "react"],
+          live: "https://taherbarakat.github.io/react-budget-app/",
+          image: "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg",
+     },
+];
 
 const Work = () => {
-     const [repos, setRepos] = useState([]);
-     useEffect(() => {
-          fetch("https://api.github.com/users/TaherBarakat/repos")
-               .then((res) => res.json())
-               .then((data) => {
-                    let ghRepos = data
-                         .filter(
-                              (repo) =>
-                                   repo.topics.filter(
-                                        (topic) => topic === "gh-pages"
-                                   ).length > 0
-                         )
-                         .map((repo) => {
-                              return {
-                                   id: repo.id,
-                                   name: capitalizeFirstLetter(
-                                        repo.name.split("-")
-                                   ).join(" "),
-                                   github: repo.svn_url,
-                                   topics: [...repo.topics],
-                                   live: repo.homepage,
-                                   image: "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg",
-                              };
-                         });
-                    setRepos([...ghRepos]);
-               });
-     }, []);
+     // const [repos, setRepos] = useState([]);
+     // useEffect(() => {
+     //      fetch("https://api.github.com/users/TaherBarakat/repos")
+     //           .then((res) => res.json())
+     //           .then((data) => {
+     //                console.log(data);
+
+     //                let ghRepos = data
+     //                     .filter(
+     //                          (repo) =>
+     //                               repo.topics.filter(
+     //                                    (topic) => topic === "gh-pages"
+     //                               ).length > 0
+     //                     )
+     //                     .map((repo) => {
+     //                          return {
+     //                               id: repo.id,
+     //                               name: capitalizeFirstLetter(
+     //                                    repo.name.split("-")
+     //                               ).join(" "),
+     //                               github: repo.svn_url,
+     //                               topics: [...repo.topics],
+     //                               live: repo.homepage,
+     //                               image: "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg",
+     //                          };
+     //                     });
+
+     //                // console.log(
+     //                //      data.filter((repo) => {
+     //                //           if (repo.topics.length == 0) return false;
+     //                //           else
+     //                //                return repo.topics.find(
+     //                //                     (topic) => topic === "gh-pages"
+     //                //                );
+     //                //      })
+     //                // );
+     //                console.log(ghRepos);
+     //                setRepos([...ghRepos]);
+     //           });
+     // }, []);
      //  const project = data;
-     //  console.log(repos);
 
      return (
           <div
                name="work"
-               className=" w-full h-auto md:h-screen  text-gray-300 bg-[#0a192f]"
+               className="min-h-[800px]   w-full h-auto md:h-screen  text-gray-300 bg-[#0a192f]"
           >
                <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
                     <div className="pb-8">
@@ -59,7 +105,7 @@ const Work = () => {
                     {/* container for projects */}
                     <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
                          {/* Gird Item */}
-                         {repos.map((item, index) => (
+                         {projects.map((item, index) => (
                               <div
                                    key={index}
                                    style={{
