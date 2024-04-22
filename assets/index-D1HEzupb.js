@@ -9300,19 +9300,19 @@ const M1 = () =>
               className: "text-4xl font-bold sm:text-right",
               children: m.jsx("p", {
                 children:
-                  "Hi. I'm Taher Barakat, nice to meet you. I help individuals and small businesses lunching there first website.",
+                  "Hi. I'm Taher Barakat, nice to meet you. I help individuals and small businesses launching their first website.",
               }),
             }),
             m.jsx("div", {
               children: m.jsxs("p", {
                 children: [
-                  "I am passionate about building excellent software that improves the the working experiences for other teams. currently working as a front-end developer | data analyst at",
+                  "I am passionate about building excellent software that improves the working experiences for other teams. currently working as a front-end developer | data analyst at",
                   m.jsx(sr, {
                     href: "http://my.syriatel.sy/index.php",
                     children: "Syriatel",
                   }),
                   " ",
-                  "biggest telecom company at syria. I specialize in creating dashboards and software for clients ranging from individuals and small-businesses all the way to large enterprise corporations. What would you do if you had a software expert available at your fingertips?",
+                  "biggest telecom company in syria. specialized in creating dashboards and software for clients ranging from individuals and small-businesses all the way to large enterprise corporations. What would you do if you had a software expert available at your fingertips?",
                 ],
               }),
             }),
