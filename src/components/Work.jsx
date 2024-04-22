@@ -8,6 +8,14 @@
 
 //      return mArr;
 // }
+import LinkComp from "./LinkComp";
+
+import NoteApp from "../assets/NoteApp.png";
+import ReactBudgetApp from "../assets/ReactBudgetApp.png";
+import ReactFlashcardApp from "../assets/ReactFlashcardApp.png";
+import ReactFoodOrderApp from "../assets/ReactFoodOrderApp.png";
+import ReactGoogleClone from "../assets/ReactGoogleClone.png";
+import UnfinishedLogo from "../assets/UnfinishedLogo.jpg";
 
 let projects = [
   {
@@ -16,8 +24,7 @@ let projects = [
     github: "https://github.com/TaherBarakat/react-flashcard-app",
     topics: ["React", "JavaScript"],
     live: "https://taherbarakat.github.io/react-flashcard-app/",
-    image:
-      "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg",
+    image: ReactFlashcardApp,
   },
   {
     id: 771518694,
@@ -32,8 +39,7 @@ let projects = [
       "NodeJs",
     ],
     live: "",
-    image:
-      "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg",
+    image: ReactGoogleClone,
   },
   {
     id: 771508694,
@@ -41,8 +47,7 @@ let projects = [
     github: "https://github.com/TaherBarakat/food-order-app",
     topics: ["React", "JavaScript", "ExpressJs"],
     live: "",
-    image:
-      "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg",
+    image: ReactFoodOrderApp,
   },
   {
     id: 777730625,
@@ -50,17 +55,15 @@ let projects = [
     github: "https://github.com/TaherBarakat/ng-food-app",
     topics: ["Angular", "MaterialUi", "TypeScript"],
     live: "",
-    image:
-      "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg",
+    image: UnfinishedLogo,
   },
   {
     id: 759979761,
     name: "Note App",
     github: "https://github.com/TaherBarakat/note-app",
-    topics: ["Nextjs", "TypeScript"],
+    topics: ["Nextjs", "TypeScript", "Bootstrap"],
     live: "",
-    image:
-      "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg",
+    image: NoteApp,
   },
   {
     id: 783237412,
@@ -68,8 +71,7 @@ let projects = [
     github: "https://github.com/TaherBarakat/react-budget-app",
     topics: ["React", "JavaScript", "Bootstrap"],
     live: "https://taherbarakat.github.io/react-budget-app/",
-    image:
-      "https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg",
+    image: ReactBudgetApp,
   },
 ];
 
@@ -121,12 +123,16 @@ const Work = () => {
       name="work"
       className=" mb-10 flex h-auto min-h-[100vh] w-full items-center  bg-[#0a192f]  text-gray-300 "
     >
+      {/* <img src={dd} alt="" /> */}
       <div className="mx-auto flex h-full w-full max-w-[1000px] flex-col justify-center p-4">
         <div className="pb-8">
           <p className="inline border-b-4 border-pink-600 text-4xl font-bold text-gray-300">
             Work
           </p>
-          <p className="py-6">// Check out some of my recent work</p>
+          <p className="py-6">
+            Check out some of my recent work, for more info check out my{" "}
+            <LinkComp href="https://github.com/TaherBarakat">GitHub</LinkComp>
+          </p>
         </div>
 
         {/* container for projects */}
@@ -142,7 +148,7 @@ const Work = () => {
               items-center justify-center rounded-md text-center shadow-lg shadow-[#040c16] "
             >
               {/* Hover effect for images */}
-              <div className="pointer-events-none opacity-0  duration-500 group-hover:pointer-events-auto group-hover:opacity-100 ">
+              <div className=" opacity-0  duration-500  group-hover:opacity-100 ">
                 <span className="font bold text-2xl tracking-wider text-white ">
                   {item.name}
                 </span>
@@ -174,7 +180,7 @@ const Work = () => {
                         className="m-2 rounded-lg bg-white px-4 py-3
                        text-center text-lg font-bold text-gray-700"
                       >
-                        Live
+                        Visit
                       </button>
                     </a>
                   )}

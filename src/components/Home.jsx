@@ -18,7 +18,7 @@ const Home = () => {
           I can center a div.
         </h2>
         <p className="max-w-[700px] py-4 text-[#8892b0]">
-          I’m a front-end developer/data analyst specializing in building (and
+          I’m a front-end developer | data analyst specialized in building (and
           occasionally designing) exceptional digital experiences. Currently,
           I’m focused on building responsive full-stack web applications.
         </p>

@@ -1,6 +1,6 @@
 import { SiTailwindcss } from "react-icons/si";
 import { SiRedux } from "react-icons/si";
-
+import LinkComp from "./LinkComp";
 import {
   FaAngular,
   FaReact,
@@ -37,7 +37,13 @@ const Skills = () => {
             <p className="inline border-b-4 border-pink-600 text-4xl font-bold ">
               Skills
             </p>
-            <p className="py-4">These are the technologies I've worked with</p>
+            <p className="py-4">
+              These are the technologies I've worked with, for more info check
+              out my{" "}
+              <LinkComp href="https://www.linkedin.com/in/Taher-Barakat">
+                Linkedin
+              </LinkComp>
+            </p>
           </div>
 
           <div className="grid w-full grid-cols-2 gap-[1rem] py-8 text-center sm:grid-cols-3 sm:grid-cols-4">

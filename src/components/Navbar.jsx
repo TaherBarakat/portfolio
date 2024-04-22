@@ -131,7 +131,7 @@ const Navbar = () => {
               className="flex w-full items-center justify-between text-[#0a192f] "
               // href="https://cvdesignr.com/p/62e8113a68805"
               href="https://cdn2.cvdesignr.com/u/cv/pdf/62e8113a68805_38f3f6ea9b9ec4d0d6df92b4b6b973fd28fffce4_e1eeb.pdf"
-              target="_blank"
+              // target="_blank"
               download
             >
               Resume <BsFillPersonLinesFill size={30} />
