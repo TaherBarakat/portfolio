@@ -8,7 +8,7 @@ export default function ProjectCard({ item, clickable, setClickable }) {
       }}
       onMouseEnter={() => setClickable(item.id)}
       onMouseLeave={() => setClickable("")}
-      className="card group relative  block aspect-video max-w-[90vw]	"
+      className="card group relative  block aspect-video max-w-[100vw] items-center justify-center	"
     >
       <span className="absolute inset-0 border-2 border-solid border-pink-600"></span>
 
@@ -16,34 +16,34 @@ export default function ProjectCard({ item, clickable, setClickable }) {
         style={{
           backgroundImage: `url(${item.image})`,
         }}
-        className="content-div container relative flex h-full w-full border-2 border-black bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 "
+        className="content-div  relative flex h-full w-full  border-2  border-black   transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 "
       ></div>
-      <div className="content-div-ch absolute bottom-0 top-0 h-full w-full bg-stone-900 p-4 text-center    transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 sm:p-6 lg:p-8">
-        <h3 className="mt-4 text-xl font-medium sm:text-2xl">{item.name} </h3>
+      <div className="content-div-ch absolute bottom-0 top-0  flex h-full w-full flex-col justify-around bg-stone-900 p-4 text-center    transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 sm:p-6 lg:p-8">
+        <h3 className="sm:text-1xl  text-lg  font-medium">{item.name} </h3>
 
-        <p className="mt-8 flex  justify-around  font-bold">
+        <p className="width-full m-3  flex justify-around  ">
           {item.live && (
             <a
-              className={`group ${item.id !== clickable ? `pointer-events-none` : ``}  relative inline-block focus:outline-none focus:ring`}
+              className={`group ${item.id !== clickable ? `pointer-events-none` : ``} relative inline-block w-[40%] focus:outline-none focus:ring`}
               href={item.live}
               target="_blank"
             >
               <span className="absolute inset-0  translate-x-5 translate-y-5 bg-pink-600 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"></span>
 
-              <span className="relative inline-block border-current px-8 py-3 text-sm font-bold uppercase tracking-widest text-white group-active:text-opacity-100">
+              <span className="relative inline-block border-current  py-2 text-sm font-bold uppercase tracking-widest text-white group-active:text-opacity-100">
                 Visit
               </span>
             </a>
           )}
 
           <a
-            className={`group ${item.id !== clickable ? "pointer-events-none" : ""}  relative inline-block focus:outline-none focus:ring`}
+            className={`group ${item.id !== clickable ? "pointer-events-none" : ""}  relative inline-block w-[40%] focus:outline-none focus:ring`}
             href={item.github}
             target="_blank"
           >
             <span className="absolute inset-0 translate-x-5 translate-y-5 bg-pink-600 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"></span>
 
-            <span className="relative inline-block  border-current px-8 py-3 text-sm font-bold uppercase tracking-widest text-white group-active:text-opacity-100">
+            <span className="relative inline-block  border-current  py-2 text-sm font-bold uppercase tracking-widest text-white group-active:text-opacity-100">
               Code
             </span>
           </a>
