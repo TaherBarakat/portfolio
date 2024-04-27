@@ -18,7 +18,7 @@ export default function ProjectCard({ item, clickable, setClickable }) {
         }}
         className="content-div container relative flex h-full w-full border-2 border-black bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 "
       ></div>
-      <div className="content-div-ch absolute bottom-0 top-0 h-full w-full bg-stone-900 p-4 text-center  opacity-90   transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 sm:p-6 lg:p-8">
+      <div className="content-div-ch absolute bottom-0 top-0 h-full w-full bg-stone-900 p-4 text-center    transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 sm:p-6 lg:p-8">
         <h3 className="mt-4 text-xl font-medium sm:text-2xl">{item.name} </h3>
 
         <p className="mt-8 flex  justify-around  font-bold">
@@ -28,9 +28,9 @@ export default function ProjectCard({ item, clickable, setClickable }) {
               href={item.live}
               target="_blank"
             >
-              <span className="absolute inset-0  translate-x-1.5 translate-y-1.5 bg-pink-600 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"></span>
+              <span className="absolute inset-0  translate-x-5 translate-y-5 bg-pink-600 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"></span>
 
-              <span className="relative inline-block border-2 border-current px-8 py-3 text-sm font-bold uppercase tracking-widest text-white group-active:text-opacity-100">
+              <span className="relative inline-block border-current px-8 py-3 text-sm font-bold uppercase tracking-widest text-white group-active:text-opacity-100">
                 Visit
               </span>
             </a>
@@ -41,9 +41,9 @@ export default function ProjectCard({ item, clickable, setClickable }) {
             href={item.github}
             target="_blank"
           >
-            <span className="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-pink-600 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"></span>
+            <span className="absolute inset-0 translate-x-5 translate-y-5 bg-pink-600 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"></span>
 
-            <span className="relative inline-block border-2 border-current px-8 py-3 text-sm font-bold uppercase tracking-widest text-white group-active:text-opacity-100">
+            <span className="relative inline-block  border-current px-8 py-3 text-sm font-bold uppercase tracking-widest text-white group-active:text-opacity-100">
               Code
             </span>
           </a>
