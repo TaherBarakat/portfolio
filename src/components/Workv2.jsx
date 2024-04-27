@@ -34,6 +34,7 @@ function reposFormatter(repos) {
 }
 const Workv2 = () => {
   const [repos, setRepos] = useState([]);
+  const [clickable, setClickable] = useState("");
 
   useEffect(() => {
     async function getGitRowRepos() {
@@ -69,7 +70,12 @@ const Workv2 = () => {
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 ">
           {/* Gird Item */}
           {repos.map((repo) => (
-            <ProjectCard item={repo} key={repo.id} />
+            <ProjectCard
+              item={repo}
+              key={repo.id}
+              clickable={clickable}
+              setClickable={setClickable}
+            />
           ))}
         </div>
       </div>
