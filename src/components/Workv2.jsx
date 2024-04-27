@@ -1,5 +1,24 @@
 import React, { useEffect, useState } from "react";
 
+import LinkComp from "./LinkComp";
+
+import ProjectCard from "./ProjectCard";
+import UnfinishedLogo from "../assets/unfinished-logo.jpg";
+
+import NoteApp from "../assets/note-app.png";
+import ReactBudgetApp from "../assets/react-budget-app.png";
+import ReactFlashcardApp from "../assets/react-flashcard-app.png";
+import ReactFoodOrderApp from "../assets/food-order-app.png";
+import ReactGoogleClone from "../assets/react-google-docs-clone.png";
+
+const previews = [
+  { name: "note-app", image: NoteApp },
+  { name: "react-budget-app", image: ReactBudgetApp },
+  { name: "react-flashcard-app", image: ReactFlashcardApp },
+  { name: "food-order-app", image: ReactFoodOrderApp },
+  { name: "react-google-docs-clone", image: ReactGoogleClone },
+];
+
 function capitalizeFirstLetter(arr) {
   let mArr = [];
   arr.forEach((element) => {
@@ -8,10 +27,6 @@ function capitalizeFirstLetter(arr) {
 
   return mArr;
 }
-import LinkComp from "./LinkComp";
-
-import UnfinishedLogo from "../assets/unfinished-logo.jpg";
-import ProjectCard from "./ProjectCard";
 
 function reposFormatter(repos) {
   return repos
@@ -28,10 +43,11 @@ function reposFormatter(repos) {
         image:
           repo.description == "unfinished"
             ? UnfinishedLogo
-            : `/src/assets/${repo.name}.png`,
+            : previews.filter((preview) => repo.name === preview.name)[0].image,
       };
     });
 }
+
 const Workv2 = () => {
   const [repos, setRepos] = useState([]);
   const [clickable, setClickable] = useState("");
@@ -42,13 +58,11 @@ const Workv2 = () => {
         "https://api.github.com/users/taherbarakat/repos?per_page=20&sort=created",
       );
       const data = await response.json();
-      console.log(reposFormatter(data));
       setRepos(reposFormatter(data));
     }
 
     getGitRowRepos();
   }, []);
-
   return (
     <div
       name="work"
