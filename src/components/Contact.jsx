@@ -1,10 +1,10 @@
-import React from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
-import { FaExternalLinkAlt } from "react-icons/fa";
+
 import LinkComp from "./LinkComp";
 
 const Contact = () => {
+  const date = new Date();
   return (
     <div
       name="contact"
@@ -57,22 +57,23 @@ const Contact = () => {
         <button className="mx-auto my-8 flex items-center border-2 px-4 py-3 text-white hover:border-pink-600 hover:bg-pink-600">
           Let's Collaborate
         </button>
-      </form>{" "}
-      <div className=" mx:10 my:5  flex w-[80vw] flex-col justify-center align-bottom lg:hidden ">
-        <p className="m-8: text-[#8892b0]"> For more info:</p>
-        <ul className="my-5 flex w-full items-center justify-between ">
-          <li className="flex h-[60px] w-[20vw] items-center justify-between    ">
+      </form>
+      {/* ------------------------------------------------------------------------- */}
+      <div className=" mx-0 mt-5  flex w-full max-w-[600px] flex-col justify-center align-bottom lg:hidden ">
+        <p className="m-8: text-[#8892b0]">Get in touch</p>
+        <ul className="mt-5 flex w-full flex-wrap items-center justify-center">
+          <li className=" flex h-[60px] w-20 items-center justify-between    ">
             <a
-              className="flex w-full  flex-col items-center justify-between text-[#8892b0] "
+              className="flex w-full flex-col items-center justify-between text-sm text-[#8892b0] "
               href="https://www.linkedin.com/in/Taher-Barakat"
               target="_blank"
             >
               <FaLinkedin size={25} /> Linkedin
             </a>
           </li>
-          <li className="flex h-[60px] w-[20vw] items-center justify-between    ">
+          <li className=" flex h-[60px] w-20 items-center justify-between    ">
             <a
-              className="flex w-full  flex-col items-center  justify-between text-[#8892b0]"
+              className="flex w-full  flex-col items-center justify-between  text-sm text-[#8892b0]"
               href="https://github.com/TaherBarakat"
               target="_blank"
             >
@@ -81,9 +82,20 @@ const Contact = () => {
             </a>
           </li>
 
-          <li className="flex h-[60px] w-[20vw] items-center justify-between">
+          <li className=" flex h-[60px] w-20 items-center justify-between    ">
             <a
-              className="flex w-full flex-col items-center justify-between text-[#8892b0]"
+              className="flex w-full  flex-col items-center  justify-between text-sm text-[#8892b0]"
+              href="https://wa.me/+963938907414"
+              target="_blank"
+            >
+              <FaWhatsapp size={25} />
+              WhatsApp
+            </a>
+          </li>
+
+          <li className=" flex h-[60px] w-20 items-center justify-between">
+            <a
+              className="flex w-full flex-col items-center justify-between text-sm text-[#8892b0]"
               href="https://cdn2.cvdesignr.com/u/cv/pdf/62e8113a68805_38f3f6ea9b9ec4d0d6df92b4b6b973fd28fffce4_e1eeb.pdf"
               target="_blank"
               download
@@ -94,6 +106,9 @@ const Contact = () => {
           </li>
         </ul>
       </div>
+      <p className="p-10 text-sm text-[#8892b0]">
+        &copy; {date.getFullYear()} Taher Barakat
+      </p>
     </div>
   );
 };

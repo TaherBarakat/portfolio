@@ -3,8 +3,7 @@ import Contact from "./components/Contact";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Skills from "./components/Skills";
-// import Work from "./components/Work";
-import Workv2 from "./components/Workv2";
+import Work from "./components/Work";
 
 function App() {
   return (
@@ -14,8 +13,7 @@ function App() {
         <Home />
         <About />
         <Skills />
-        {/* <Work /> */}
-        <Workv2 />
+        <Work />
         <Contact />
       </div>
     </>

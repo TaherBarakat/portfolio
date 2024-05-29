@@ -1,9 +1,16 @@
-import React, { useState } from "react";
-import { FaBars, FaTimes, FaGithub, FaLinkedin } from "react-icons/fa";
-// import { HiOutlineMail } from "react-icons/hi";
+import { useState } from "react";
+import {
+  FaBars,
+  FaTimes,
+  FaGithub,
+  FaLinkedin,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+
 import Logo from "/logo.svg";
 import { Link } from "react-scroll";
+
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
@@ -138,6 +145,16 @@ const Navbar = () => {
               download
             >
               Resume <BsFillPersonLinesFill size={30} />
+            </a>
+          </li>
+
+          <li className="ml-[-100px] flex h-[60px] w-[160px] items-center justify-between bg-[#ccd6f6] duration-300 hover:ml-[-10px]">
+            <a
+              className="flex w-full items-center justify-between text-[#0a192f] "
+              href="https://wa.me/+963938907414"
+              target="_blank"
+            >
+              Whatsapp <FaWhatsapp size={30} />
             </a>
           </li>
         </ul>
