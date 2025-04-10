@@ -66,15 +66,15 @@ const Work = () => {
   return (
     <div
       name="work"
-      className=" mb-10 flex h-auto min-h-[100vh] w-full items-center  bg-[#0a192f]  text-gray-300 "
+      className=" text-text bg-primary mb-10 flex h-auto min-h-[100vh]  w-full  items-center"
     >
       {/* <img src={dd} alt="" /> */}
       <div className="mx-auto flex h-full w-full max-w-[1000px] flex-col justify-center p-4">
         <div className="pb-8">
-          <p className="inline border-b-4 border-pink-600 text-4xl font-bold text-gray-300">
+          <p className="border-accent text-text inline border-b-4 text-4xl font-bold text-gray-300">
             Work
           </p>
-          <p className="py-6">
+          <p className="text-text-dark py-6">
             Check out some of my recent work, for more info check out my{" "}
             <LinkComp href="https://github.com/TaherBarakat">GitHub</LinkComp>
           </p>

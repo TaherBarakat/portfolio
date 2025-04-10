@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <div
       name="contact"
-      className=" flex h-auto min-h-[100vh] w-full  flex-col items-center justify-end bg-[#0a192f] p-4 pt-[10vh]"
+      className=" bg-primary flex h-auto min-h-[100vh]  w-full flex-col items-center justify-end p-4 pt-[10vh]"
     >
       <form
         method="POST"
@@ -16,10 +16,10 @@ const Contact = () => {
         className="flex w-full max-w-[600px] flex-col"
       >
         <div className="pb-8">
-          <p className="inline border-b-4 border-pink-600 text-4xl font-bold text-gray-300">
+          <p className="border-accent text-text inline border-b-4 text-4xl font-bold">
             Contact
           </p>
-          <p className="py-4 text-gray-300">
+          <p className="text-text-dark py-4">
             Shoot me an email at{" "}
             <LinkComp href="mailto:Taher.Barakat12223@gmail.com">
               Taher.Barakat12223@gmail.com{" "}
@@ -37,24 +37,24 @@ const Contact = () => {
         />
 
         <input
-          className="bg-[#ccd6f6] p-2"
+          className="bg-text placeholder-text-dark p-2 "
           type="text"
           placeholder="Name"
           name="name"
         />
         <input
-          className="my-4 bg-[#ccd6f6] p-2"
+          className="bg-text  placeholder-text-dark my-4 p-2"
           type="email"
           placeholder="Email"
           name="email"
         />
         <textarea
-          className="bg-[#ccd6f6] p-2"
+          className="bg-text placeholder-text-dark  p-2"
           name="message"
           rows="10"
           placeholder="Message"
         ></textarea>
-        <button className="mx-auto my-8 flex items-center border-2 px-4 py-3 text-white hover:border-pink-600 hover:bg-pink-600">
+        <button className="hover:border-accent hover:bg-accent text-text border-text mx-auto my-8 flex items-center border-2 px-4 py-3">
           Let's Collaborate
         </button>
       </form>
@@ -106,7 +106,7 @@ const Contact = () => {
           </li>
         </ul>
       </div>
-      <p className="p-10 text-sm text-[#8892b0]">
+      <p className="text-text-dark p-10 text-sm">
         &copy; {date.getFullYear()} Taher Barakat
       </p>
     </div>

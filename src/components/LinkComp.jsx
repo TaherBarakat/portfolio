@@ -5,7 +5,7 @@ export default function LinkComp({ children, ...props }) {
   return (
     <a
       target="_blank"
-      className="  font-semibold text-pink-600 duration-500 hover:text-[1.015rem] hover:text-pink-700"
+      className="  text-accent hover:text-accent font-semibold duration-500 hover:text-[1.015rem]"
       {...props}
     >
       {" "}
