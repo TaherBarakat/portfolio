@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FaRegSun, FaRegMoon } from "react-icons/fa";
 
 const ThemeToggle = () => {
   const [isDark, setIsDark] = useState(false);
@@ -25,7 +26,7 @@ const ThemeToggle = () => {
 
   return (
     <button onClick={toggleTheme} className="rounded-full p-2">
-      {isDark ? "☀️" : "🌙"}
+      {isDark ? <FaRegSun /> : <FaRegMoon />}
     </button>
   );
 };

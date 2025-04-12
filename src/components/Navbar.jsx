@@ -18,7 +18,17 @@ const Navbar = () => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className="fixed z-40 flex h-[9vh] min-h-[40px] w-full items-center justify-between bg-primary px-[5vw] text-text md:px-10">
+    <div className="fixed z-40 flex h-[9vh] min-h-[40px] w-full items-center justify-between  bg-primary px-[5vw] text-text  md:justify-start  md:px-10">
+      {/* <div
+        className="flex items-center"
+        style={{
+          height: "100%",
+          // aspectRatio: "1 / 1",
+          // maxHeight: "100%",
+        }}
+      >
+              </div> */}
+
       <div
         style={{
           height: "70%",
@@ -36,7 +46,7 @@ const Navbar = () => {
       </div>
 
       {/* menu */}
-      <ul className="hidden md:flex">
+      <ul className="ml-10 hidden md:flex">
         <li>
           <Link to="home" smooth={true} duration={500}>
             Home
@@ -62,20 +72,23 @@ const Navbar = () => {
             Contact
           </Link>
         </li>
-        <li>
-          <ThemeToggle />
-        </li>
       </ul>
-
-      {/* Hamburger */}
-      <div className="z-10 md:hidden">
+      <div className="absolute right-[5vw] hidden md:block">
         <ThemeToggle />
       </div>
 
-      <div onClick={handleClick} className="z-10 md:hidden">
-        {!nav ? <FaBars /> : <FaTimes />}
-      </div>
+      {/* Hamburger */}
+      <div className=" flex w-[18vw] flex-row items-center justify-between  ">
+        <div className="z-10 md:hidden">
+          <ThemeToggle />
+        </div>
+        {/* <div className="z-10 md:hidden"> */}
+        {/* </div> */}
 
+        <div onClick={handleClick} className="z-10 md:hidden">
+          {!nav ? <FaBars /> : <FaTimes />}
+        </div>
+      </div>
       {/* Mobile menu */}
       <ul
         className={
