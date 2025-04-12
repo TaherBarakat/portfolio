@@ -3,8 +3,8 @@ x="100"
 y="100px"
   >
 
-  <g data-v-0dd9719b="" fill="#DB2777" class="bordersvg b-d1" transform="translate(123.36999893188477,81.75)">
-    <polyline stroke="#DB2777" stroke-width="4" fill-opacity="0" fill="#ffffff" points="85.97750186920166,20 85.97750186920166,-5 -5,-5 -5,91.5 85.97750186920166,91.5 85.97750186920166,71.5"/>
+  <g data-v-0dd9719b="" fill="#d92778" class="bordersvg b-d1" transform="translate(123.36999893188477,81.75)">
+    <polyline stroke="#d92778" stroke-width="4" fill-opacity="0" fill="#ffffff" points="85.97750186920166,20 85.97750186920166,-5 -5,-5 -5,91.5 85.97750186920166,91.5 85.97750186920166,71.5"/>
     <g transform="translate(0,20)">
       <g>
         <rect data-gra="graph-name-bg" stroke-width="2" class="i-icon-bg" x="0" y="0" width="98.26000213623047" height="51.5" fill-opacity="0"/>
