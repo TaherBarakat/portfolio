@@ -13,6 +13,24 @@
   }
 }
 
+:root {
+  /* Light theme defaults */
+  --color-primary: #e6f1ff;
+  --color-secondary: #d92778;
+  --color-accent: #d92778;
+  --color-text: #0a192f;
+  --color-text-dark: #334155;
+}
+
+.dark {
+  /* Dark theme overrides */
+  --color-primary: #0a192f;
+  --color-secondary: #d92778;
+  --color-accent: #d92778;
+  --color-text: #e6f1ff;
+  --color-text-dark: #a8b2d1;
+}
+
 .content-div {
   background-repeat: no-repeat;
   background-size: cover;

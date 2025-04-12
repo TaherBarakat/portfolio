@@ -7,6 +7,8 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import ThemeToggle from "./ThemeToggle";
+// import LinkComp from "./LinkComp";
 
 import Logo from "/logo.svg";
 import { Link } from "react-scroll";
@@ -16,7 +18,7 @@ const Navbar = () => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className="text-text bg-primary fixed z-40 flex h-[9vh] min-h-[40px] w-full items-center justify-between px-[5vw] md:px-10">
+    <div className="fixed z-40 flex h-[9vh] min-h-[40px] w-full items-center justify-between bg-primary px-[5vw] text-text md:px-10">
       <div
         style={{
           height: "70%",
@@ -60,9 +62,16 @@ const Navbar = () => {
             Contact
           </Link>
         </li>
+        <li>
+          <ThemeToggle />
+        </li>
       </ul>
 
       {/* Hamburger */}
+      <div className="z-10 md:hidden">
+        <ThemeToggle />
+      </div>
+
       <div onClick={handleClick} className="z-10 md:hidden">
         {!nav ? <FaBars /> : <FaTimes />}
       </div>
@@ -72,9 +81,10 @@ const Navbar = () => {
         className={
           !nav
             ? "hidden"
-            : "bg-primary absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center"
+            : "absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center bg-primary"
         }
       >
+        <li className="py-6 text-4xl"></li>
         <li className="py-6 text-4xl">
           <Link onClick={handleClick} to="home" smooth={true} duration={500}>
             Home
@@ -109,18 +119,18 @@ const Navbar = () => {
       {/* Social icons */}
       <div className="fixed left-0 top-[35%] hidden flex-col lg:flex">
         <ul>
-          <li className="bg-text ml-[-100px] flex h-[60px] w-[160px] items-center justify-between duration-300 hover:ml-[-10px] ">
+          <li className="ml-[-100px] flex h-[60px] w-[160px] items-center justify-between bg-text duration-300 hover:ml-[-10px] ">
             <a
-              className="text-primary flex w-full items-center justify-between "
+              className="flex w-full items-center justify-between text-primary "
               href="https://www.linkedin.com/in/Taher-Barakat"
               target="_blank"
             >
               Linkedin <FaLinkedin size={30} />
             </a>
           </li>
-          <li className="bg-text ml-[-100px] flex h-[60px] w-[160px] items-center justify-between duration-300 hover:ml-[-10px]">
+          <li className="ml-[-100px] flex h-[60px] w-[160px] items-center justify-between bg-text duration-300 hover:ml-[-10px]">
             <a
-              className="text-primary flex w-full items-center justify-between"
+              className="flex w-full items-center justify-between text-primary"
               href="https://github.com/TaherBarakat"
               target="_blank"
             >
@@ -136,9 +146,9 @@ const Navbar = () => {
                                    Email <HiOutlineMail size={30} />
                               </a>
                          </li> */}
-          <li className="bg-text ml-[-100px] flex h-[60px] w-[160px] items-center justify-between duration-300 hover:ml-[-10px]">
+          <li className="ml-[-100px] flex h-[60px] w-[160px] items-center justify-between bg-text duration-300 hover:ml-[-10px]">
             <a
-              className="text-primary flex w-full items-center justify-between "
+              className="flex w-full items-center justify-between text-primary "
               // href="https://cvdesignr.com/p/62e8113a68805"
               href="https://cdn2.cvdesignr.com/u/cv/pdf/62e8113a68805_38f3f6ea9b9ec4d0d6df92b4b6b973fd28fffce4_e1eeb.pdf"
               // target="_blank"
@@ -148,9 +158,9 @@ const Navbar = () => {
             </a>
           </li>
 
-          <li className="bg-text ml-[-100px] flex h-[60px] w-[160px] items-center justify-between duration-300 hover:ml-[-10px]">
+          <li className="ml-[-100px] flex h-[60px] w-[160px] items-center justify-between bg-text duration-300 hover:ml-[-10px]">
             <a
-              className="text-primary flex w-full items-center justify-between "
+              className="flex w-full items-center justify-between text-primary "
               href="https://wa.me/+963938907414"
               target="_blank"
             >
