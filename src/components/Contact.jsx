@@ -1,31 +1,108 @@
+import { useState } from "react";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
-
 import LinkComp from "./LinkComp";
 
 const Contact = () => {
   const date = new Date();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const validateForm = () => {
+    let valid = true;
+    const newErrors = {
+      name: "",
+      email: "",
+      message: "",
+    };
+
+    // Name validation
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+      valid = false;
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = "Name must be at least 2 characters";
+      valid = false;
+    }
+
+    // Email validation
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+      valid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+      valid = false;
+    }
+
+    // Message validation
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+      valid = false;
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = "Message must be at least 10 characters";
+      valid = false;
+    }
+
+    setErrors(newErrors);
+    return valid;
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: "",
+      }));
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      setIsSubmitting(true);
+      // Submit the form
+      e.target.submit();
+    }
+  };
+
   return (
     <div
       name="contact"
-      className=" bg-primary flex h-auto min-h-[100vh]  w-full flex-col items-center justify-end p-4 pt-[10vh]"
+      className="flex h-auto min-h-[100vh] w-full flex-col items-center justify-end bg-primary p-4 pt-[10vh]"
     >
       <form
         method="POST"
         action="https://getform.io/f/panvkqka"
+        onSubmit={handleSubmit}
         className="flex w-full max-w-[600px] flex-col"
       >
         <div className="pb-8">
-          <p className="border-accent text-text inline border-b-4 text-4xl font-bold">
+          <p className="inline border-b-4 border-accent text-4xl font-bold text-text">
             Contact
           </p>
-          <p className="text-text-dark py-4">
+          <p className="py-4 text-text-dark">
             Shoot me an email at{" "}
             <LinkComp href="mailto:Taher.Barakat12223@gmail.com">
               Taher.Barakat12223@gmail.com{" "}
             </LinkComp>{" "}
             or just call me at this number{" "}
-            <LinkComp href="tel:+963938907414">+963 938 907 414</LinkComp> ,also
+            <LinkComp href="tel:+963938907414">+963 938 907 414</LinkComp>, also
             you can submit the form below
             <br />
           </p>
@@ -35,29 +112,49 @@ const Contact = () => {
           name="_gotcha"
           style={{ display: "none !important" }}
         />
-
+        {errors.name && (
+          <p className="text-danger mb-1 text-sm">{errors.name}</p>
+        )}
         <input
-          className="bg-text placeholder-text-dark p-2 "
+          className={`mb-4 bg-text p-2 text-primary placeholder-text-dark ${errors.name ? "border-danger border" : ""}`}
           type="text"
           placeholder="Name"
           name="name"
+          value={formData.name}
+          onChange={handleChange}
         />
+        {errors.email && (
+          <p className="text-danger mb-1 text-sm">{errors.email}</p>
+        )}
         <input
-          className="bg-text  placeholder-text-dark my-4 p-2"
+          className={`mb-4 bg-text p-2 text-primary placeholder-text-dark ${errors.email ? "border-danger border" : ""}`}
           type="email"
           placeholder="Email"
           name="email"
+          value={formData.email}
+          onChange={handleChange}
         />
+        {errors.message && (
+          <p className="text-danger mb-1 text-sm">{errors.message}</p>
+        )}
         <textarea
-          className="bg-text placeholder-text-dark  p-2"
+          className={`bg-text p-2 text-primary placeholder-text-dark ${errors.message ? "border-danger border" : ""}`}
           name="message"
           rows="10"
           placeholder="Message"
+          value={formData.message}
+          onChange={handleChange}
         ></textarea>
-        <button className="hover:border-accent hover:bg-accent text-text border-text mx-auto my-8 flex items-center border-2 px-4 py-3">
-          Let's Collaborate
+
+        <button
+          type="submit"
+          className="mx-auto my-8 flex items-center border-2 border-text px-4 py-3 text-text hover:border-accent hover:bg-accent disabled:opacity-50"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Sending..." : "Let's Collaborate"}
         </button>
       </form>
+
       {/* ------------------------------------------------------------------------- */}
       <div className=" mx-0 mt-5  flex w-full max-w-[600px] flex-col justify-center align-bottom lg:hidden ">
         <p className="m-8: text-[#8892b0]">Get in touch</p>
@@ -106,7 +203,7 @@ const Contact = () => {
           </li>
         </ul>
       </div>
-      <p className="text-text-dark p-10 text-sm">
+      <p className="p-10 text-sm text-text-dark">
         &copy; {date.getFullYear()} Taher Barakat
       </p>
     </div>

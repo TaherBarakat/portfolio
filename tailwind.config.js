@@ -12,6 +12,7 @@ export default {
           DEFAULT: "var(--color-text)",
           dark: "var(--color-text-dark)",
         },
+        danger: "var(--color-danger)",
       },
     },
   },
