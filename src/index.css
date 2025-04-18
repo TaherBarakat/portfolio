@@ -49,6 +49,12 @@
   z-index: 20;
   opacity: 0.9;
 }
+/* App.css or index.css */
+p,
+h1,
+h2 {
+  cursor: default; /* Keeps the regular arrow */
+}
 
 /* .content-div:hover {
      background: linear-gradient(

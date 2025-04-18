@@ -26,7 +26,7 @@ const About = () => {
             <p className="text-text-dark">
               I am passionate about building excellent software that improves
               the working experiences for other teams. currently working as a
-              front-end developer | data analyst at{" "}
+              web developer at{" "}
               <LinkComp href="http://my.syriatel.sy/index.php">
                 Syriatel
               </LinkComp>{" "}
