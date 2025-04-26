@@ -113,10 +113,10 @@ const Contact = () => {
           style={{ display: "none !important" }}
         />
         {errors.name && (
-          <p className="text-danger mb-1 text-sm">{errors.name}</p>
+          <p className="mb-1 text-sm text-danger">{errors.name}</p>
         )}
         <input
-          className={`mb-4 bg-text p-2 text-primary placeholder-text-dark ${errors.name ? "border-danger border" : ""}`}
+          className={`mb-4 bg-text p-2 text-primary placeholder-text-dark ${errors.name ? "border border-danger" : ""}`}
           type="text"
           placeholder="Name"
           name="name"
@@ -124,10 +124,10 @@ const Contact = () => {
           onChange={handleChange}
         />
         {errors.email && (
-          <p className="text-danger mb-1 text-sm">{errors.email}</p>
+          <p className="mb-1 text-sm text-danger">{errors.email}</p>
         )}
         <input
-          className={`mb-4 bg-text p-2 text-primary placeholder-text-dark ${errors.email ? "border-danger border" : ""}`}
+          className={`mb-4 bg-text p-2 text-primary placeholder-text-dark ${errors.email ? "border border-danger" : ""}`}
           type="email"
           placeholder="Email"
           name="email"
@@ -135,10 +135,10 @@ const Contact = () => {
           onChange={handleChange}
         />
         {errors.message && (
-          <p className="text-danger mb-1 text-sm">{errors.message}</p>
+          <p className="mb-1 text-sm text-danger">{errors.message}</p>
         )}
         <textarea
-          className={`bg-text p-2 text-primary placeholder-text-dark ${errors.message ? "border-danger border" : ""}`}
+          className={`bg-text p-2 text-primary placeholder-text-dark ${errors.message ? "border border-danger" : ""}`}
           name="message"
           rows="10"
           placeholder="Message"
@@ -193,9 +193,9 @@ const Contact = () => {
           <li className=" flex h-[60px] w-20 items-center justify-between">
             <a
               className="flex w-full flex-col items-center justify-between text-sm text-[#8892b0]"
-              href="https://cdn2.cvdesignr.com/u/cv/pdf/62e8113a68805_38f3f6ea9b9ec4d0d6df92b4b6b973fd28fffce4_e1eeb.pdf"
+              href="https://raw.githubusercontent.com/TaherBarakat/taher-barakat-cv-generator-v2/main/taher-barakat-cv.pdf"
               target="_blank"
-              download
+              download="Taher-Barakat-Resume.pdf" // Forces download with this filename
             >
               <BsFillPersonLinesFill size={25} />
               Resume

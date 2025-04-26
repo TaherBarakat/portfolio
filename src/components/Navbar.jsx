@@ -163,9 +163,8 @@ const Navbar = () => {
             <a
               className="flex w-full items-center justify-between text-primary "
               // href="https://cvdesignr.com/p/62e8113a68805"
-              href="https://cdn2.cvdesignr.com/u/cv/pdf/62e8113a68805_38f3f6ea9b9ec4d0d6df92b4b6b973fd28fffce4_e1eeb.pdf"
-              // target="_blank"
-              download
+              href="https://raw.githubusercontent.com/TaherBarakat/taher-barakat-cv-generator-v2/main/taher-barakat-cv.pdf" // target="_blank"
+              download="Taher-Barakat-Resume.pdf" // Forces download with this filename
             >
               Resume <BsFillPersonLinesFill size={30} />
             </a>
