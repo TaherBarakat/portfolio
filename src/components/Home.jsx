@@ -1,39 +1,83 @@
 import React from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { Link } from "react-scroll";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { HOME_ANIMATIONS } from "../animations";
+// HOME_ANIMATIONS constants
 
 const Home = () => {
+  const { scrollY } = useScroll();
+
+  // Scroll transforms
+  const nameSlide = useTransform(
+    scrollY,
+    [0, 300],
+    [0, HOME_ANIMATIONS.name.exit.x],
+  );
+  const titleSlide = useTransform(
+    scrollY,
+    [0, 300],
+    [0, HOME_ANIMATIONS.title.exit.x],
+  );
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+
   return (
-    <div
+    <motion.div
       name="home"
-      className=" mb-10 flex  h-auto min-h-[100vh] w-full items-center bg-primary  pt-10"
+      className="mb-10 flex h-auto min-h-[100vh] w-full items-center overflow-x-hidden bg-primary pt-10"
+      style={{ opacity }}
     >
-      {/* Container */}
-      <div className="mx-auto flex h-full max-w-[1000px] flex-col justify-center  px-8">
-        <p className="text-accent">Hi, my name is</p>
-        <h1 className="text-4xl font-bold text-text sm:text-7xl">
+      <motion.div
+        className="mx-auto flex h-full max-w-[1000px] flex-col justify-center px-8"
+        initial="hidden"
+        animate="visible"
+        variants={HOME_ANIMATIONS.container}
+      >
+        <motion.p className="text-accent" variants={HOME_ANIMATIONS.greeting}>
+          Hi, my name is
+        </motion.p>
+
+        <motion.h1
+          className="text-4xl font-bold text-text sm:text-7xl"
+          variants={HOME_ANIMATIONS.name}
+          style={{ x: nameSlide }}
+        >
           Taher Barakat.
-        </h1>
-        <h2 className="text-4xl font-bold text-text-dark sm:text-7xl">
+        </motion.h1>
+
+        <motion.h2
+          className="text-4xl font-bold text-text-dark sm:text-7xl"
+          variants={HOME_ANIMATIONS.title}
+          style={{ x: titleSlide }}
+        >
           I can center a div.
-        </h2>
-        <p className="max-w-[700px] py-4 text-text-dark">
-          I’m a web developer specialized in building (and occasionally
-          designing) exceptional digital experiences. Currently, I’m focused on
+        </motion.h2>
+
+        <motion.p
+          className="max-w-[700px] py-4 text-text-dark"
+          variants={HOME_ANIMATIONS.description}
+        >
+          I'm a web developer specialized in building (and occasionally
+          designing) exceptional digital experiences. Currently, I'm focused on
           building responsive full-stack web applications.
-        </p>
+        </motion.p>
+
         <Link to="work" smooth={true} duration={500}>
-          <div>
-            <button className="group my-2 flex items-center border-2 border-text px-6 py-3 text-text hover:border-accent hover:bg-accent">
+          <motion.div variants={HOME_ANIMATIONS.button}>
+            <motion.button
+              className="group my-2 flex items-center border-2 border-text px-6 py-3 text-text hover:border-accent hover:bg-accent"
+              whileHover={HOME_ANIMATIONS.hover}
+              whileTap={HOME_ANIMATIONS.tap}
+            >
               View Work
               <span className="duration-300 group-hover:rotate-90">
-                <HiArrowNarrowRight className="ml-3 " />
+                <HiArrowNarrowRight className="ml-3" />
               </span>
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </Link>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
