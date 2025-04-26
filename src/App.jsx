@@ -4,18 +4,22 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Skills from "./components/Skills";
 import Work from "./components/Work";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   return (
     <>
-      <div className="bg-primary">
-        <Navbar />
-        <Home />
-        <About />
-        <Skills />
-        <Work />
-        <Contact />
-      </div>
+      <AnimatePresence mode="wait">
+        {/* Other components */}
+        <div className="bg-primary">
+          <Navbar />
+          <Home />
+          <About />
+          <Skills />
+          <Work />
+          <Contact />
+        </div>
+      </AnimatePresence>
     </>
   );
 }
