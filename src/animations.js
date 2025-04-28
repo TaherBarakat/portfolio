@@ -442,3 +442,79 @@ export const HOME_ANIMATIONS = {
     scale: 0.95,
   },
 };
+
+// Slide Right (enter from right)
+export const slideRight = {
+  offscreen: {
+    x: 100,
+    filter: "blur(3px)",
+    opacity: 0,
+  },
+  onscreen: {
+    x: 0,
+    filter: "blur(0px)",
+    opacity: 1,
+    transition: {
+      type: "tween",
+      ease: "easeInOut",
+      duration: 0.8,
+    },
+  },
+};
+
+// Slide Left (enter from left)
+export const slideLeft = {
+  offscreen: {
+    x: -100,
+    filter: "blur(3px)",
+    opacity: 0,
+  },
+  onscreen: {
+    x: 0,
+    filter: "blur(0px)",
+    opacity: 1,
+    transition: {
+      type: "tween",
+      ease: "easeInOut",
+      duration: 0.8,
+    },
+  },
+};
+
+// Slide Top to Bottom (enter from top)
+export const slideDown = {
+  offscreen: {
+    y: -300,
+    filter: "blur(3px)",
+    opacity: 0,
+  },
+  onscreen: {
+    y: 0,
+    filter: "blur(0px)",
+    opacity: 1,
+    transition: {
+      type: "tween",
+      ease: "easeInOut",
+      duration: 0.8,
+    },
+  },
+};
+
+// Slide Bottom to Top (enter from bottom)
+export const slideUp = {
+  offscreen: {
+    y: 50,
+    filter: "blur(3px)",
+    opacity: 0,
+  },
+  onscreen: {
+    y: 0,
+    filter: "blur(0px)",
+    opacity: 1,
+    transition: {
+      type: "tween",
+      ease: "easeInOut",
+      duration: 0.8,
+    },
+  },
+};

@@ -1,29 +1,49 @@
 import React from "react";
 import LinkComp from "./LinkComp";
+import { motion } from "framer-motion";
+import { slideDown, slideLeft, slideRight, slideUp } from "../animations";
 const About = () => {
+  // const slidRight = {
+  //   offscreen: {
+  //     x: 300,
+  //   },
+  //   onscreen: {
+  //     x: 0,
+  //     // rotate: -10,
+  //     transition: {
+  //       type: "tween",
+  //       // bounce: 0.4,
+  //       // duration: 0.8,
+  //     },
+  //   },
+  // };
+
   return (
-    <div
+    <motion.div
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ amount: 0.5 }} // <-- control when animation triggers
       name="about"
-      className=" mb-10 flex h-auto min-h-[90vh] w-full items-center bg-primary  text-text "
+      className=" mb-10 flex h-auto min-h-[90vh] w-full items-center overflow-hidden  bg-primary text-text "
     >
       <div className="flex h-full min-h-full w-full flex-col items-center justify-center">
         <div className="grid w-full max-w-[1000px] grid-cols-2 gap-8">
-          <div className=" pb-8 pl-4">
+          <motion.div variants={slideUp} className=" pb-8 pl-4">
             <p className="inline border-b-4 border-accent text-4xl font-bold">
               About
             </p>
-          </div>
+          </motion.div>
           <div></div>
         </div>
         <div className="grid w-full max-w-[1000px] gap-8 px-4 sm:grid-cols-2">
           <div className="text-4xl font-bold text-text sm:text-right">
-            <p>
+            <motion.p variants={slideRight}>
               Hi. I'm Taher Barakat, nice to meet you. I help individuals and
               small businesses launching their first website.
-            </p>
+            </motion.p>
           </div>
           <div>
-            <p className="text-text-dark">
+            <motion.p variants={slideLeft} className="text-text-dark">
               I am passionate about building excellent software that improves
               the working experiences for other teams. currently working as a
               web developer at{" "}
@@ -35,11 +55,11 @@ const About = () => {
               small-businesses all the way to large enterprise corporations.
               What would you do if you had a software expert available at your
               fingertips?
-            </p>
+            </motion.p>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
