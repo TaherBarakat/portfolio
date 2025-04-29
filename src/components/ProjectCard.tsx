@@ -1,8 +1,20 @@
 import React, { useState } from "react";
-
-export default function ProjectCard({ item, clickable, setClickable }) {
+import { animations, motion } from "framer-motion";
+import {
+  navbarAnimations,
+  setProjectCardAnimation,
+  slidDescription,
+  slideDown,
+  slideUp,
+} from "../shared/animations";
+export default function ProjectCard({ item, clickable, setClickable, index }) {
+  let animation = setProjectCardAnimation(index);
+  console.log(0.2 + index * 0.3);
   return (
-    <div
+    <motion.div
+      variants={animation}
+      custom={index}
+      // transition={{ delay: 0.2 + index * 1 }}
       onClick={() => {
         setClickable(item.id);
       }}
@@ -10,7 +22,7 @@ export default function ProjectCard({ item, clickable, setClickable }) {
       onMouseLeave={() => setClickable("")}
       className="card group relative  block aspect-video max-w-[100vw] items-center justify-center	"
     >
-      <span className="border-accent absolute inset-0 border-2 border-solid"></span>
+      <span className="absolute inset-0 border-2 border-solid border-accent"></span>
 
       <div
         style={{
@@ -18,8 +30,8 @@ export default function ProjectCard({ item, clickable, setClickable }) {
         }}
         className="content-div  relative flex h-full w-full  border-2  border-black   transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 "
       ></div>
-      <div className="content-div-ch bg-text-dark absolute bottom-0  top-0 flex h-full w-full flex-col justify-around p-4 text-center    transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 sm:p-6 lg:p-8">
-        <h3 className="sm:text-1xl  text-primary  text-lg  font-medium">
+      <div className="content-div-ch absolute bottom-0 top-0  flex h-full w-full flex-col justify-around bg-text-dark p-4 text-center    transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 sm:p-6 lg:p-8">
+        <h3 className="sm:text-1xl  text-lg  font-medium  text-primary">
           {item.name}{" "}
         </h3>
 
@@ -30,9 +42,9 @@ export default function ProjectCard({ item, clickable, setClickable }) {
               href={item.live}
               target="_blank"
             >
-              <span className="bg-accent absolute  inset-0 translate-x-5 translate-y-5 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"></span>
+              <span className="absolute inset-0  translate-x-5 translate-y-5 bg-accent transition-transform group-hover:translate-x-0 group-hover:translate-y-0"></span>
 
-              <span className="text-text relative inline-block  border-current py-2 text-sm font-bold uppercase tracking-widest group-active:text-opacity-100">
+              <span className="relative inline-block border-current  py-2 text-sm font-bold uppercase tracking-widest text-text group-active:text-opacity-100">
                 Visit
               </span>
             </a>
@@ -43,15 +55,15 @@ export default function ProjectCard({ item, clickable, setClickable }) {
             href={item.github}
             target="_blank"
           >
-            <span className="bg-accent absolute inset-0 translate-x-5 translate-y-5 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"></span>
+            <span className="absolute inset-0 translate-x-5 translate-y-5 bg-accent transition-transform group-hover:translate-x-0 group-hover:translate-y-0"></span>
 
-            <span className="text-text relative  inline-block  border-current py-2 text-sm font-bold uppercase tracking-widest group-active:text-opacity-100">
+            <span className="relative inline-block  border-current  py-2 text-sm font-bold uppercase tracking-widest text-text group-active:text-opacity-100">
               Code
             </span>
           </a>
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

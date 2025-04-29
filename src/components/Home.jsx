@@ -2,8 +2,8 @@ import React from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { Link } from "react-scroll";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { HOME_ANIMATIONS } from "../animations";
-// HOME_ANIMATIONS constants
+import { homeAnimation } from "../shared/animations";
+// homeAnimation constants
 
 const Home = () => {
   const { scrollY } = useScroll();
@@ -12,12 +12,12 @@ const Home = () => {
   const nameSlide = useTransform(
     scrollY,
     [0, 300],
-    [0, HOME_ANIMATIONS.name.exit.x],
+    [0, homeAnimation.name.exit.x],
   );
   const titleSlide = useTransform(
     scrollY,
     [0, 300],
-    [0, HOME_ANIMATIONS.title.exit.x],
+    [0, homeAnimation.title.exit.x],
   );
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
@@ -31,15 +31,15 @@ const Home = () => {
         className="mx-auto flex h-full max-w-[1000px] flex-col justify-center px-8"
         initial="hidden"
         animate="visible"
-        variants={HOME_ANIMATIONS.container}
+        variants={homeAnimation.container}
       >
-        <motion.p className="text-accent" variants={HOME_ANIMATIONS.greeting}>
+        <motion.p className="text-accent" variants={homeAnimation.greeting}>
           Hi, my name is
         </motion.p>
 
         <motion.h1
           className="text-4xl font-bold text-text sm:text-7xl"
-          variants={HOME_ANIMATIONS.name}
+          variants={homeAnimation.name}
           style={{ x: nameSlide }}
         >
           Taher Barakat.
@@ -47,7 +47,7 @@ const Home = () => {
 
         <motion.h2
           className="text-4xl font-bold text-text-dark sm:text-7xl"
-          variants={HOME_ANIMATIONS.title}
+          variants={homeAnimation.title}
           style={{ x: titleSlide }}
         >
           I can center a div.
@@ -55,7 +55,7 @@ const Home = () => {
 
         <motion.p
           className="max-w-[700px] py-4 text-text-dark"
-          variants={HOME_ANIMATIONS.description}
+          variants={homeAnimation.description}
         >
           I'm a web developer specialized in building (and occasionally
           designing) exceptional digital experiences. Currently, I'm focused on
@@ -63,11 +63,11 @@ const Home = () => {
         </motion.p>
 
         <Link to="work" smooth={true} duration={500}>
-          <motion.div variants={HOME_ANIMATIONS.button}>
+          <motion.div variants={homeAnimation.button}>
             <motion.button
               className="group my-2 flex items-center border-2 border-text px-6 py-3 text-text hover:border-accent hover:bg-accent"
-              whileHover={HOME_ANIMATIONS.hover}
-              whileTap={HOME_ANIMATIONS.tap}
+              whileHover={homeAnimation.hover}
+              whileTap={homeAnimation.tap}
             >
               View Work
               <span className="duration-300 group-hover:rotate-90">

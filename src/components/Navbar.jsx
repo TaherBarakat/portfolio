@@ -13,54 +13,12 @@ import ThemeToggle from "./ThemeToggle";
 
 import Logo from "/logo.svg";
 import { Link } from "react-scroll";
-
+import { navbarAnimations } from "../shared/animations";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
 
   // Animation variants for navbar elements
-  const navbarAnimations = {
-    container: {
-      initial: { opacity: 0 },
-      animate: {
-        opacity: 1,
-        transition: { staggerChildren: 0.1, delayChildren: 0.2 },
-      },
-    },
-    logoItem: {
-      initial: { y: -50, opacity: 0 },
-      animate: {
-        y: 0,
-        opacity: 1,
-        transition: { duration: 0.5, ease: "easeOut" },
-      },
-    },
-    navItem: {
-      initial: { y: -50, opacity: 0 },
-      animate: {
-        y: 0,
-        opacity: 1,
-        transition: {
-          duration: 0.5,
-          ease: "easeOut",
-          type: "spring",
-          stiffness: 100,
-        },
-      },
-    },
-    socialItem: {
-      initial: { x: -160, opacity: 0 },
-      animate: {
-        x: 0,
-        opacity: 1,
-        transition: { duration: 0.5, ease: "easeOut" },
-      },
-      hover: {
-        x: 90,
-        transition: { duration: 0.3 },
-      },
-    },
-  };
 
   return (
     <motion.div

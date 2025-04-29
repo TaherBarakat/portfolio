@@ -2,7 +2,8 @@ import { useState } from "react";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import LinkComp from "./LinkComp";
-
+import { motion } from "framer-motion";
+import { slideUp, slidDescription } from "../shared/animations";
 const Contact = () => {
   const date = new Date();
   const [formData, setFormData] = useState({
@@ -82,7 +83,10 @@ const Contact = () => {
   };
 
   return (
-    <div
+    <motion.div
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ amount: 0.5 }} // <-- control when animation triggers
       name="contact"
       className="flex h-auto min-h-[100vh] w-full flex-col items-center justify-end bg-primary p-4 pt-[10vh]"
     >
@@ -93,19 +97,23 @@ const Contact = () => {
         className="flex w-full max-w-[600px] flex-col"
       >
         <div className="pb-8">
-          <p className="inline border-b-4 border-accent text-4xl font-bold text-text">
-            Contact
-          </p>
-          <p className="py-4 text-text-dark">
-            Shoot me an email at{" "}
-            <LinkComp href="mailto:Taher.Barakat12223@gmail.com">
-              Taher.Barakat12223@gmail.com{" "}
-            </LinkComp>{" "}
-            or just call me at this number{" "}
-            <LinkComp href="tel:+963938907414">+963 938 907 414</LinkComp>, also
-            you can submit the form below
-            <br />
-          </p>
+          <motion.div className="motion" variants={slideUp}>
+            <p className="inline border-b-4 border-accent text-4xl font-bold text-text">
+              Contact
+            </p>
+          </motion.div>
+          <motion.div variants={slidDescription}>
+            <p className="py-4 text-text-dark">
+              Shoot me an email at{" "}
+              <LinkComp href="mailto:Taher.Barakat12223@gmail.com">
+                Taher.Barakat12223@gmail.com{" "}
+              </LinkComp>{" "}
+              or just call me at this number{" "}
+              <LinkComp href="tel:+963938907414">+963 938 907 414</LinkComp>,
+              also you can submit the form below
+              <br />
+            </p>
+          </motion.div>
         </div>
         <input
           type="hidden"
@@ -206,7 +214,7 @@ const Contact = () => {
       <p className="p-10 text-sm text-text-dark">
         &copy; {date.getFullYear()} Taher Barakat
       </p>
-    </div>
+    </motion.div>
   );
 };
 
