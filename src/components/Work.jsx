@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from "react";
-
 import LinkComp from "./LinkComp";
-
 import ProjectCard from "./ProjectCard";
-import UnfinishedLogo from "../assets/unfinished-logo.jpg";
 
-import NoteApp from "../assets/note-app.png";
-import ReactBudgetApp from "../assets/react-budget-app.png";
-import ReactFlashcardApp from "../assets/react-flashcard-app.png";
-import ReactFoodOrderApp from "../assets/food-order-app.png";
-import ReactGoogleClone from "../assets/react-google-docs-clone.png";
+import UnfinishedLogo from "../assets/unfinished-logo.jpg";
+import NoteApp from "../assets/note-app.webp";
+import ReactBudgetApp from "../assets/react-budget-app.webp";
+import ReactFlashcardApp from "../assets/react-flashcard-app.webp";
+import ReactGoogleClone from "../assets/react-google-docs-clone.webp";
+import NgEcommerce from "../assets/ng-ecommerce.webp";
 import Section from "../shared/Section";
 const previews = [
   { name: "note-app", image: NoteApp },
   { name: "react-budget-app", image: ReactBudgetApp },
   { name: "react-flashcard-app", image: ReactFlashcardApp },
-  { name: "food-order-app", image: ReactFoodOrderApp },
+  { name: "ng-ecommerce", image: NgEcommerce },
   { name: "react-google-docs-clone", image: ReactGoogleClone },
 ];
 
