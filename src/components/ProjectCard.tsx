@@ -9,7 +9,6 @@ import {
 } from "../shared/animations";
 export default function ProjectCard({ item, clickable, setClickable, index }) {
   let animation = setProjectCardAnimation(index);
-  console.log(0.2 + index * 0.3);
   return (
     <motion.div
       variants={animation}
