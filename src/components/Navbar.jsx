@@ -12,7 +12,7 @@ import ThemeToggle from "./ThemeToggle";
 // import LinkComp from "./LinkComp";
 
 import Logo from "/logo.svg";
-import { Link } from "react-scroll";
+import { Button } from "react-scroll";
 import { navbarAnimations } from "../shared/animations";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -52,9 +52,9 @@ const Navbar = () => {
             custom={index}
             transition={{ delay: 0.2 + index * 0.1 }}
           >
-            <Link to={item} smooth={true} duration={500}>
+            <Button to={item} smooth={true} duration={500}>
               {item.charAt(0).toUpperCase() + item.slice(1)}
-            </Link>
+            </Button>
           </motion.li>
         ))}
       </ul>
@@ -105,9 +105,14 @@ const Navbar = () => {
             custom={index}
             transition={{ delay: index * 0.1 }}
           >
-            <Link onClick={handleClick} to={item} smooth={true} duration={500}>
+            <Button
+              onClick={handleClick}
+              to={item}
+              smooth={true}
+              duration={500}
+            >
               {item.charAt(0).toUpperCase() + item.slice(1)}
-            </Link>
+            </Button>
           </motion.li>
         ))}
       </motion.ul>

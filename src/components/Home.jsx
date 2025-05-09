@@ -1,8 +1,7 @@
-import React from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import { Link } from "react-scroll";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { homeAnimation } from "../shared/animations";
+import { Button } from "react-scroll";
 // homeAnimation constants
 
 const Home = () => {
@@ -57,12 +56,12 @@ const Home = () => {
           className="max-w-[700px] py-4 text-text-dark"
           variants={homeAnimation.description}
         >
-          I'm a web developer specialized in building (and occasionally
-          designing) exceptional digital experiences. Currently, I'm focused on
-          building responsive full-stack web applications.
+          I&apos;m a software developer specialized in building (and
+          occasionally designing) exceptional digital experiences. Currently,
+          I&apos;m focused on building responsive full-stack web applications.
         </motion.p>
 
-        <Link to="work" smooth={true} duration={500}>
+        <Button to="work" smooth={true} duration={500}>
           <motion.div variants={homeAnimation.button}>
             <motion.button
               className="group my-2 flex items-center border-2 border-text px-6 py-3 text-text hover:border-accent hover:bg-accent"
@@ -75,7 +74,7 @@ const Home = () => {
               </span>
             </motion.button>
           </motion.div>
-        </Link>
+        </Button>
       </motion.div>
     </motion.div>
   );
