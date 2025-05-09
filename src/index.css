@@ -12,7 +12,16 @@
     @apply cursor-pointer;
   }
 }
+/* :root {
+  --color-primary: #e6f1ff;
+  --color-secondary: #d92778;
+  --color-accent: #d92778;
+  --color-text: #0a192f;
+  --color-text-dark: #334155;
+  --color-danger: #ef4444;
 
+} */
+/* ddddddddddddddddddddddddddddd */
 :root {
   /* Light theme defaults */
   --color-primary: #e6f1ff;
@@ -21,7 +30,40 @@
   --color-text: #0a192f;
   --color-text-dark: #334155;
   --color-danger: #ef4444;
+
+  view-transition-name: none;
+  color-scheme: light dark;
 }
+
+@keyframes move-out {
+  from {
+    clip-path: circle(100% at var(--theme-button-cord));
+  }
+
+  to {
+    clip-path: circle(0% at var(--theme-button-cord));
+  }
+}
+
+::view-transition-old(changing-theme) {
+  animation: move-out 500ms ease-in-out both;
+  z-index: 10;
+}
+
+::view-transition-new(changing-theme) {
+  z-index: 9;
+}
+
+/* Accessibility: reduced motion */
+@media screen and (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ddddddddddddddddddddddddddddd */
 
 .dark {
   /* Dark theme overrides */
