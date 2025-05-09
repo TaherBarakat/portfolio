@@ -1,7 +1,7 @@
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { homeAnimation } from "../shared/animations";
-import { Button, Link } from "react-scroll";
+import { Link } from "react-scroll";
 // homeAnimation constants
 
 const Home = () => {
