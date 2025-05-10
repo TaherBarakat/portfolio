@@ -31,13 +31,16 @@ const Navbar = () => {
           aspectRatio: "1 / 1",
         }}
       >
-        <img
-          src={Logo}
-          alt="Logo Image"
-          style={{
-            height: "100%",
-          }}
-        />
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+          <img
+            className="cursor-pointer"
+            src={Logo}
+            alt="Logo Image"
+            style={{
+              height: "100%",
+            }}
+          />
+        </a>
       </motion.div>
 
       {/* menu */}
