@@ -1,7 +1,7 @@
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { homeAnimation } from "../shared/animations";
-import { Link } from "react-scroll";
+import { Button } from "react-scroll";
 // homeAnimation constants
 
 const Home = () => {
@@ -61,9 +61,9 @@ const Home = () => {
           I&apos;m focused on building responsive full-stack web applications.
         </motion.p>
 
-        <Link to="work" smooth={true} duration={500}>
-          <motion.div variants={homeAnimation.button}>
-            <motion.button
+        <motion.div variants={homeAnimation.button}>
+          <Button to="work" smooth={true} duration={500}>
+            <motion.div
               className="group my-2 flex items-center border-2 border-text px-6 py-3 text-text hover:border-accent hover:bg-accent"
               whileHover={homeAnimation.hover}
               whileTap={homeAnimation.tap}
@@ -72,9 +72,9 @@ const Home = () => {
               <span className="duration-300 group-hover:rotate-90">
                 <HiArrowNarrowRight className="ml-3" />
               </span>
-            </motion.button>
-          </motion.div>
-        </Link>
+            </motion.div>
+          </Button>
+        </motion.div>
       </motion.div>
     </motion.section>
   );
