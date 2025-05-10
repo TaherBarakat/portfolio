@@ -11,14 +11,14 @@ function App() {
     <>
       <AnimatePresence mode="wait">
         {/* Other components */}
-        <div className="bg-primary">
+        <main className="bg-primary">
           <Navbar />
           <Home />
           <About />
           <Skills />
           <Work />
           <Contact />
-        </div>
+        </main>
       </AnimatePresence>
     </>
   );

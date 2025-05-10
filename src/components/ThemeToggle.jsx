@@ -33,15 +33,17 @@
 
 // export default ThemeToggle;
 
-import { useEffect, useState } from "react";
 import "@theme-toggles/react/css/Lightbulb.css";
+import { useEffect, useState } from "react";
 import { Lightbulb } from "@theme-toggles/react";
-
+import { motion } from "framer-motion";
+import { navbarAnimations } from "../shared/animations";
+const THEME_LS_KEY = "TAHER_PORTFOLIO_THEME";
 const ThemeToggle = () => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    const savedMode = localStorage.getItem("theme");
+    const savedMode = localStorage.getItem(THEME_LS_KEY);
     const prefersDark = window.matchMedia(
       "(prefers-color-scheme: dark)",
     ).matches;
@@ -66,7 +68,7 @@ const ThemeToggle = () => {
 
     const applyTheme = () => {
       setIsDark(newMode);
-      localStorage.setItem("theme", newMode ? "dark" : "light");
+      localStorage.setItem(THEME_LS_KEY, newMode ? "dark" : "light");
       html.classList.toggle("dark", newMode);
       html.style.setProperty("color-scheme", newMode ? "dark" : "light");
     };
@@ -79,13 +81,18 @@ const ThemeToggle = () => {
   };
 
   return (
-    <span onClick={toggleTheme}>
+    <motion.span
+      onClick={toggleTheme}
+      variants={navbarAnimations.navItem}
+      transition={{ delay: 0.7 }}
+      className="z-10 flex h-full flex-1 items-center justify-center pb-1 "
+    >
       <Lightbulb
         aria-label="Toggle theme"
         duration={2000}
-        className="h-full scale-125 rounded-full p-2 transition-colors  "
+        className=" scale-[1.8] rounded-full p-2 transition-colors md:scale-[1.6]  "
       />
-    </span>
+    </motion.span>
   );
 };
 

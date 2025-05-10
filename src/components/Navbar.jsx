@@ -1,19 +1,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  FaBars,
-  FaTimes,
-  FaGithub,
-  FaLinkedin,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import ThemeToggle from "./ThemeToggle";
 // import LinkComp from "./LinkComp";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 import Logo from "/logo.svg";
 import { Button } from "react-scroll";
 import { navbarAnimations } from "../shared/animations";
+import { AiOutlineClose } from "react-icons/ai";
+
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
@@ -21,8 +18,8 @@ const Navbar = () => {
   // Animation variants for navbar elements
 
   return (
-    <motion.div
-      className="fixed z-40 flex h-[9vh] min-h-[40px] w-full items-center justify-between bg-primary px-[5vw] text-text md:justify-start md:px-10"
+    <motion.nav
+      className="fixed z-40 flex h-[8vh] min-h-[40px] w-full items-center justify-between bg-primary px-[5vw] text-text md:h-[10vh] md:justify-start md:px-10"
       initial="initial"
       animate="animate"
       variants={navbarAnimations.container}
@@ -59,30 +56,19 @@ const Navbar = () => {
         ))}
       </ul>
 
-      <motion.div
-        className="absolute right-[5vw] hidden md:block"
-        variants={navbarAnimations.navItem}
-        transition={{ delay: 0.7 }}
-      >
-        <ThemeToggle />
-      </motion.div>
-
       {/* Hamburger */}
-      <div className="flex w-[18vw] flex-row items-center justify-between">
-        <motion.div
-          className="z-10 md:hidden"
-          variants={navbarAnimations.navItem}
-        >
-          <ThemeToggle />
-        </motion.div>
+      <div className="ml-auto flex h-full w-[25vw] flex-row items-center justify-between gap-2">
+        <ThemeToggle />
+        {/* </motion.div> */}
 
-        <motion.div
-          onClick={handleClick}
-          className="z-10 md:hidden"
+        <motion.Button
+          aria-label="Menu"
+          className="z-10 flex h-full flex-1 items-center justify-center md:hidden "
           variants={navbarAnimations.navItem}
+          onClick={handleClick}
         >
-          {!nav ? <FaBars /> : <FaTimes />}
-        </motion.div>
+          {!nav ? <RxHamburgerMenu size={25} /> : <AiOutlineClose size={25} />}
+        </motion.Button>
       </div>
 
       {/* Mobile menu */}
@@ -170,7 +156,7 @@ const Navbar = () => {
           ))}
         </ul>
       </motion.div>
-    </motion.div>
+    </motion.nav>
   );
 };
 

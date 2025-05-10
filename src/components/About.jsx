@@ -1,12 +1,6 @@
-import React from "react";
 import LinkComp from "./LinkComp";
 import { motion } from "framer-motion";
-import {
-  slideDown,
-  slideLeft,
-  slideRight,
-  slideUp,
-} from "../shared/animations";
+import { slideLeft, slideRight } from "../shared/animations";
 import Section from "../shared/Section";
 const About = () => {
   // const slidRight = {

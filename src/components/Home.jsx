@@ -21,7 +21,7 @@ const Home = () => {
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
-    <motion.div
+    <motion.section
       name="home"
       className="mb-10 flex h-auto min-h-[100vh] w-full items-center overflow-x-hidden bg-primary pt-10"
       style={{ opacity }}
@@ -76,7 +76,7 @@ const Home = () => {
           </motion.div>
         </Link>
       </motion.div>
-    </motion.div>
+    </motion.section>
   );
 };
 
