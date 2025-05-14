@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className="fixed z-40 flex h-[8vh] min-h-[40px] w-full items-center justify-between bg-primary px-[5vw] text-text md:h-[10vh] md:justify-start md:px-10"
+      className="fixed z-40 flex h-16 min-h-[40px] w-full  items-center justify-between bg-primary  px-[5vw] text-text   md:justify-start md:px-10"
       initial="initial"
       animate="animate"
       variants={navbarAnimations.container}
@@ -31,16 +31,13 @@ const Navbar = () => {
           aspectRatio: "1 / 1",
         }}
       >
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-          <img
-            className="cursor-pointer"
-            src={Logo}
-            alt="Logo Image"
-            style={{
-              height: "100%",
-            }}
-          />
-        </a>
+        <img
+          src={Logo}
+          alt="Logo Image"
+          style={{
+            height: "100%",
+          }}
+        />
       </motion.div>
 
       {/* menu */}

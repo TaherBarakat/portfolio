@@ -53,7 +53,7 @@ const Work = () => {
   useEffect(() => {
     async function getGitRowRepos() {
       const response = await fetch(
-        "https://api.github.com/users/taherbarakat/repos?per_page=20&sort=created",
+        "https://api.github.com/users/taherbarakat/repos?per_page=25&sort=created",
       );
       const data = await response.json();
       setRepos(reposFormatter(data));
