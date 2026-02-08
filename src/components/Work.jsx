@@ -67,8 +67,14 @@ const Work = () => {
       title="work"
       description={
         <p className="py-6 text-text-dark">
-          Check out some of my recent work, for more info check out my{" "}
-          <LinkComp href="https://github.com/TaherBarakat">GitHub</LinkComp>
+          Explore some of my side projects below. For more details and source
+          code, visit my{" "}
+          <LinkComp href="https://github.com/TaherBarakat">GitHub</LinkComp>{" "}
+          ,and check out my{" "}
+          <LinkComp href="https://www.linkedin.com/in/Taher-Barakat">
+            Linkedin
+          </LinkComp>{" "}
+          to learn more about my work at Syriatel.
         </p>
       }
     >

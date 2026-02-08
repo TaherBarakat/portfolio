@@ -3,6 +3,7 @@ import {
   SiRedux,
   SiTypescript,
   // DiVisualstudio,
+  SiVim,
 } from "react-icons/si";
 
 import {
@@ -26,7 +27,7 @@ export let mySkills = [
   <FaGithub size={50} title="Github" className="text-text-dark" key={5} />,
   <DiVisualstudio
     size={50}
-    title="ADO.NET"
+    title=".NET Core"
     className="text-text-dark"
     key={6}
   />,
@@ -43,4 +44,5 @@ export let mySkills = [
     className="text-text-dark"
     key={9}
   />,
+  <SiVim size={50} title="Vim" className="text-text-dark" key={9}></SiVim>,
 ];
